@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+        <%- include('../partials/admin-nav.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= title %></h4>
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <div class="form-group">
+                              <label for="userforphoto">User Profil Photo</label>
+                              <input type="file" name="userforphoto" class="form-control" id="userforphoto" >
+                            </div>
+                            <div class="form-group">
+                            <label for="model">Full Name</label>
+                            <input type="text" class="form-control" name="fullname">
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Email</label>
+                            <input type="email" class="form-control" name="email">
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Password</label>
+                            <input type="password" class="form-control" name="password">
+                          </div>
+                          <div class="col-md-6">
+                        <% roles.forEach(role => { %>
+                            <div class="form-group">
+                              <div class="form-radio form-radio-flat">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="role" id="role" value="<%= role.id %>"                                                                                         
+                                > <%= role.rolename %> </label>
+                              </div>
+                            </div>
+                        <% }) %>
+                          </div>
+                          <button type="submit" class="btn btn-success mr-2">Create User</button>
+                          <a href="/admin/users" class="btn btn-light">Cancel</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>

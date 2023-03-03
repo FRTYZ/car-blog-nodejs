@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>
+
+</head>
+<body>
+    
+<%- include('../partials/nav.ejs') %>
+<div class="gtrhk" >       
+        <div class="sol-icerik">
+            <h1 class="heading"><%= history.models %>
+            </h1>
+            <h5 class="heading1">(<%= history.years %>)</h5>  
+            <div class="content">
+                <img src="/static/user/image/GTR/<%= history.photo %>" class="sola-kaydir">
+                    <%- history.text %>            
+            </div>
+        </div>
+    </br>
+</div>
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>

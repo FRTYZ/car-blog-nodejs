@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <%- include('../partials/admin-nav.ejs') %>
+      <div class="container-fluid page-body-wrapper">
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title"><%= title %></h4>
+                    <a class="btn btn-outline-primary btn-rounded btn-fw" href="/admin/addforhistory">Add A History List</a>
+
+                    <table class="table table-striped">
+                      <thead>
+                        <th>ID</th>
+                        <th>Photo</th>
+                        <th>Model Name</th>
+                        <th>Years</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                      </thead>
+                      <tbody>
+                        <% modelshistory.forEach(history => { %>
+                            <tr>
+                                <td><%= history.id %></td>
+                                <td><img src="/static/user/image/GTR/<%= history.photo %>"></td>
+                                <td><%= history.models %></td>
+                                <td><%= history.years %></td>
+                                <td>
+                                  <% if (history.active == 1) { %>
+                                    <label class="badge badge-success">Active</label>
+                                  <% } %>
+                                  <% if (history.active == 0) { %>
+                                    <label class="badge badge-danger">Passive</label>
+                                  <% } %>
+                                </td>
+                                <td>
+                                    <a href="/admin/editforhistory/<%= history.id %>"><img class="formimage" src="/static/admin/images/edit.png"></a>
+                                </td>
+                                <td>
+                                    <a href="/admin/historydelete/<%= history.id %>"><img class="formimage" src="/static/admin/images/delete.png"></a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                     
+                      </tbody>
+                    </table>
+             
+            </div>
+          </div>
+          
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>

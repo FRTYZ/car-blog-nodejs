@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+        <%- include('../partials/admin-nav.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= title %></h4>
+                        <% if (typeof message != "undefined") { %>
+                          <div class="alert alert-<%= message.class %>">
+                              <%= message.text %>
+                          </div>
+                      <% } %>
+                        <form class="forms-sample" method="post" action="/admin/my_user_edit/<%= user.id %>?_csrf<%= csrfToken %>" enctype="multipart/form-data">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="hidden" name="userid" value="<%= user.id %>">
+                            <input type="hidden" name="userforphoto" value="<%= user.user_photo %>">
+
+                              <div class="form-group">
+                                  <label>User Profil Photo</label>
+                                  <br/>
+                                  <img src="/static/admin/images/user_photo/<%= user.user_photo %>" width="150">
+                              <br/>
+                              
+                              <input type="file" name="userforphoto" class="form-control" id="userforphoto" value="<%= user.user_photo %>">
+                          </div>  
+                        
+                            <div class="form-group">
+                            <label for="model">Full Name</label>
+                            <input type="text" class="form-control" name="fullname" value="<%= user.fullname %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Email</label>
+                            <input type="email" class="form-control" name="email" value="<%= user.email %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="years">Bio</label>
+                            <textarea id="editor" name="bio" class="form-control"><%= user.bio %></textarea>
+                          </div>                   
+                          <button type="submit" class="btn btn-success mr-2">Update Profile</button>
+                          <a href="" class="btn btn-light">Cancel</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title">Update Password</h4>
+                        <br/>
+                      
+                        <form class="forms-sample" method="post" action="/admin/my_user_edit/password/<%= localid %>?_csrf<%= csrfToken %>">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="hidden" name="id" value="<%= localid %>">
+
+                          <div class="form-group">
+                            <label for="model">Old Password</label>
+                            <input type="password" class="form-control" name="oldpass">
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Password</label>
+                            <input type="password" class="form-control" name="password">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="model">Confirm new password</label>
+                            <input type="password" class="form-control" name="confirmpassword">
+                          </div>
+                                             
+                          <button type="submit" class="btn btn-success mr-2">Update Password</button>
+                          <a href="" class="btn btn-light">Cancel</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>

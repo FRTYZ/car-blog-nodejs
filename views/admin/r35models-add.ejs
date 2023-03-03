@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+        <%- include('../partials/admin-nav.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= title %></h4>
+                        <form class="forms-sample"  action="/admin/addr35models?_csrf=<%= csrfToken %>" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <div class="form-group">
+                                <label for="r35forphoto">File upload</label>
+                                <input type="file" name="r35forphoto" class="form-control" id="r35forphoto" >
+                              </div>
+                            <div class="form-group">
+                            <label for="model">Model Name</label>
+                            <input type="text" class="form-control" name="model" id="model" >
+                          </div>
+                          <div class="form-group">
+                            <label for="years">Model Years</label>
+                            <input type="text" class="form-control" name="years">
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control" name="price" >
+                          </div>
+                          <div class="form-group">
+                            <label for="engine">Engine</label>
+                            <input type="text" class="form-control" name="engine">
+                          </div>
+                          <div class="form-group">
+                            <label for="gearbox">Gearbox</label>
+                            <input type="text" class="form-control" name="gearbox">
+                          </div>
+                          <div class="form-group">
+                            <label for="speed">Speed</label>
+                            <input type="text" class="form-control" name="speed">
+                          </div>
+                          <div class="form-group">
+                            <label for="years">Explanation</label>
+                            <textarea id="editor" name="about" class="form-control"></textarea>
+                          </div>
+                          <div class="form-check form-check-flat">
+                            <label class="form-check-label"> Status
+                              <input type="checkbox" class="form-check-input" name="active" id="active"></label>
+                          </div>
+                          <button type="submit" class="btn btn-success mr-2">Publish</button>
+                          <a href="/admin/r35models" class="btn btn-light">Cancel</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>
