@@ -7,7 +7,6 @@ const config = {
         password : process.env.DB_PASS,
         database : process.env.DB_NAME,
         port: process.env.DB_PORT,
-        createDatabaseTable: true,
         connectionLimit: 10
     },
     email : {
