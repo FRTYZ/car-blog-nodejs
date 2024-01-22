@@ -7,7 +7,9 @@ connection.connect(function(err) {
     if(err){
         return console.log(err);
     }
-    console.log("succesfully connected to mysql server");
+    else {
+        console.log(`DB connectionRequest Successful ${connection.threadId}`)
+    }
 })
 
 module.exports = connection.promise();
