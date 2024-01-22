@@ -9,9 +9,9 @@ const config = {
         port: process.env.DB_PORT
     },
     email : {
-        username : "fr4tyildiz@outlook.com",
-        password : "123hape123.+",
-        from : "fr4tyildiz@outlook.com"
+        username : process.env.EMAIL_USERNAME,
+        password : process.env.EMAIL_PASS,
+        from : process.env.EMAIL
     }
 }
 
