@@ -13,11 +13,37 @@ I used MySQL as database.
 
 I designed the Login Panel and User Panel using my own knowledge. I got the Admin Panel ready from [BootstrapDash](https://www.bootstrapdash.com/product/og-star-admin-free) and customized it
 
+## Deploy
+https://car-blog-nodejs-production.up.railway.app/
+
+
 ## To Run the Project
 
 - Include Your Database in Server (`project-db.sql`)
 - Ensure the necessary packages are installed by saying `npm install`
-- You can run the project by saying `npm run start` 
+
+- Create (`.env`) in ('./') path
+
+```
+DB_HOST = localhost
+DB_USER = root
+DB_PASS = 
+DB_NAME = gtr-web
+DB_PORT = 
+EMAIL_USERNAME = 
+EMAIL_FROM = 
+EMAIL_PASS = 
+```
+
+- You can run the project by saying `npm run dev` 
+
+- `/admin` at the end of the url to access the admin panel 
+
+```
+email = guest@guest.com
+password = 123
+```
+
 
 ### package.json
 
@@ -29,7 +55,8 @@ I designed the Login Panel and User Panel using my own knowledge. I got the Admi
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon index.js"
+    "dev": "npx nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -37,13 +64,14 @@ I designed the Login Panel and User Panel using my own knowledge. I got the Admi
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.3.2",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-mysql-session": "^2.1.8",
     "express-session": "^1.17.3",
     "htmlspecialchars": "^1.0.5",
     "multer": "^1.4.5-lts.1",
-    "mysql2": "^3.1.2",
+    "mysql2": "^3.6.1",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.20",
     "tiny-csrf": "^1.1.3"
@@ -149,4 +177,4 @@ I designed the Login Panel and User Panel using my own knowledge. I got the Admi
 ![](./public//user/image/ss/13.1-r35-detail.PNG)
 ![](./public//user/image/ss/13-user-contact-footer.PNG)
 
-
+Happy Coding
