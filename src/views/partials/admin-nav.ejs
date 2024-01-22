@@ -6,14 +6,13 @@
         <img src="/static/user/image/logo.png" alt="logo" /> </a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center">
-      
-      
       <ul class="navbar-nav ml-auto">       
         <% if (isAuth) { %>            
             
                 <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
                   <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                    <img class="img-xs rounded-circle" src="/static/admin/images/user_photo/<%= photo %>" alt="Profile image"> </a>
+                    <img class="img-xs rounded-circle" src="/static/admin/images/user_photo/<%= photo %>" alt="Profile image"> 
+                  </a>
                   <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                     <div class="dropdown-header text-center">
                       <img class="img-md rounded-circle" src="/static/admin/images/user_photo/<%= photo %>" alt="Profile image">
@@ -24,7 +23,6 @@
                     <a class="dropdown-item" href="/admin/account/logout">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
                   </div>
                 </li>
-        
               </ul>
               <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
                 <span class="mdi mdi-menu"></span>
