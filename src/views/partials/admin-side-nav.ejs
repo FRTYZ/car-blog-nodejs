@@ -1,0 +1,38 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item nav-category">Main Menu</li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="menu-icon typcn typcn-coffee"></i>
+          <span class="menu-title">Home Components</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <% if (isAdmin || isModerator) { %>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/admin">History List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/r35models">R35 Model List</a>
+                  </li>            
+                </ul>
+              </div>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin/inbox">
+                  <i class="menu-icon typcn typcn-document-text"></i>
+                  <span class="menu-title">Inbox</span>
+                </a>
+              </li>
+        <% } %>
+      </li>
+      <% if (isAdmin) { %>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/users">
+              <i class="menu-icon typcn typcn-document-text"></i>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
+      <% } %>
+    </ul>
+  </nav>

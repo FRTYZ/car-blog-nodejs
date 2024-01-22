@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>
+
+</head>
+<body>
+    
+<%- include('../partials/nav.ejs') %>
+<div class="gtrhk" >       
+        <div class="sol-icerik">
+            <h1 class="heading"><%= r35.model %>
+            </h1>
+            <h5 class="heading1">(<%= r35.year %>)</h5>  
+            <div class="content">
+                <img src="/static/user/image/R35/<%= r35.photo %>" class="sola-kaydir">
+                    <%- r35.about %>
+                <table id="ozellik-tablom">
+                    <tr>
+                      <th>Features</th>    
+                    </tr>
+                    <tr>
+                      <td>Price</td>
+                      <td><%= r35.price %></td>    
+                    </tr>
+                    
+                    <tr>
+                      <td>Release date</td>
+                      <td><%= r35.year %></td>    
+                    </tr>
+                    <tr>
+                      <td>Power @ RPM</td>
+                      <td><%= r35.engine %></td>    
+                    </tr>
+                    
+                      <tr>
+                        <td>Maximum Speed</td>
+                        <td><%= r35.speed %></td>    
+                      </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td><%= r35.gearbox %></td>    
+                      </tr>
+                  </table>
+            </div>
+        </div>
+    </br>
+</div>
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>

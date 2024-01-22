@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head.ejs') %>   
+</head>
+<body>
+    
+    <%- include('../partials/nav.ejs') %>
+    
+    
+<section class="home" id="home">
+
+    <h3 data-speed="-2" class="home-parallax">Nissan <br/> GTR</h3>
+
+    <img  class="home-parallax" src="/static/user/image/anasayfailk.jpg" alt="">    
+
+</section>
+
+
+
+
+<section class="featured" id="gtr-models">
+    <h1 class="heading">From where to where : Nissan Skyline GT<span style="color:red">R</span></h1>
+
+    <div class="swiper featured-slider">
+
+       <div class="swiper-wrapper">
+
+        <% modelHistory.forEach(history => { %>
+            <div class="swiper-slide box">
+                <a href="/history_details/<%= history.id %>">
+                    <img src="static/user/image/GTR/<%= history.photo %>" alt="">
+                </a>
+                <div class="content">
+                    <h3><%= history.models %><br/> (<%= history.years %>)</h3> 
+                    <p>
+                       <%- history.text.substring(0,250) %>
+                    </p>   
+                    <a href="/history_details/<%= history.id %>" class="btn">More Information</a>
+                </div>
+            </div>
+        <% }) %>
+            
+
+       </div>
+       <div class="swiper-pagination"></div>
+    </div>
+
+</section>
+
+<br/>
+<br/>
+<br/>
+
+
+
+<section class="vehicles" id="r35">
+
+    <h1 class="heading"> Sixth Generation : GTR <span style="color:red">R</span>-35 <span>Models</span> </h1>
+
+    <div class="swiper vehicles-slider">
+
+        <div class="swiper-wrapper">
+
+            <% r35model.forEach(r35 => { %>
+                <div class="swiper-slide box">
+                    <a href="/r35model_details/<%= r35.id %>">
+                        <img src="static/user/image/R35/<%= r35.photo %>" alt="">
+                    </a>              
+                    <div class="content">
+                        <h3><%= r35.model %></h3>
+                        <div class="price"> <span>Price : </span> <%= r35.price %> </div>
+                        <p>
+                            New
+                            <span class="fas fa-circle"></span> <%= r35.year %>
+                            <span class="fas fa-circle"></span> <%= r35.engine %>
+                            <span class="fas fa-circle"></span> <%= r35.gearbox %>
+                            <span class="fas fa-circle"></span> <%= r35.speed %>
+                        </p>
+                        <a href="/r35model_details/<%= r35.id %>" class="btn">Detailed Review</a>
+                       
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+
+
+<section class="contact" id="contact">
+    <h1 class="heading"><span>Contact</span></h1>   
+
+    <div class="row">        
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12837.486830250009!2d139.9081233!3d36.4485724!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84298150f016ee2d!2sNissan%20Motor%20Tochigi%20Plant!5e0!3m2!1str!2str!4v1677696104324!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form action="/contact_message" method="post">
+            
+            <a style="text-align:center;" href="mailto: firatyildiznet@gmail.com" class="btn">You Can Send Message From Email Application</a>
+            <br/>
+            <br/>
+            <h2>OR</h2>
+            <br/>
+            <h3>Contact</h3>
+            <br/>
+            <% if ((typeof message != "undefined")) { %>
+                <a style="text-align:center;" class="btn btn-<%= message.class %>"><%= message.text %></a>
+            <% } %>
+            <input type="text" placeholder="Full Name" name="fullname" class="box">
+            <input type="email" placeholder="Email" name="email" class="box">
+            <textarea placeholder="Please write your message respectfully." name="message" class="box" cols="30" rows="10"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+    </div>
+
+</section>
+
+<%- include('../partials/footer.ejs') %>
+
+</body>
+</html>

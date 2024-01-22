@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+        <%- include('../partials/admin-nav.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= title %></h4>
+                        <form class="forms-sample" action="/admin/r35modelsedit/<%= r35data.id %>?_csrf=<%= csrfToken %>" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <input type="hidden" name="r35id" value="<%= r35data.id %>">
+                            <input type="hidden" name="r35forphoto" value="<%= r35data.photo %>">
+                            <div class="form-group">
+                                <label for="r35forphoto">File upload</label>
+                                <img src="/static/user/image/R35/<%= r35data.photo %>" width="250">
+                                <input type="file" name="r35forphoto" class="form-control" id="r35forphoto" value="<%= r35data.photo %>">
+                              </div>
+                            <div class="form-group">
+                            <label for="model">Model Name</label>
+                            <input type="text" class="form-control" name="model" id="model" value="<%= r35data.model %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="years">Model Years</label>
+                            <input type="text" class="form-control" name="years" value="<%= r35data.year %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="text" class="form-control" name="price" value="<%= r35data.price %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="engine">Engine</label>
+                            <input type="text" class="form-control" name="engine" value="<%= r35data.engine %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="gearbox">Gearbox</label>
+                            <input type="text" class="form-control" name="gearbox" value="<%= r35data.gearbox %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="speed">Speed</label>
+                            <input type="text" class="form-control" name="speed" value="<%= r35data.speed %>">
+                          </div>
+                          <div class="form-group">
+                            <label for="years">Explanation</label>
+                            <textarea id="editor" name="about" class="form-control"><%= r35data.about %></textarea>
+                          </div>
+                          <div class="form-check form-check-flat">
+                            <label class="form-check-label"> Status
+                              <input type="checkbox" class="form-check-input" name="active" id="active" <%= r35data.active ? "checked" : "" %>></label>
+                          </div>
+                          <button type="submit" class="btn btn-success mr-2">Update</button>
+                          <button class="btn btn-light">Cancel</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <%- include('../partials/admin-nav.ejs') %>
+      <div class="container-fluid page-body-wrapper">
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+            
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title"><%= title %></h4>
+                    <table class="table table-striped">
+                      <thead>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Detail</th>
+                        <th>Delete</th>
+                   
+                      </thead>
+                      <tbody>
+                        <% inbox.forEach(message => { %>
+                            <tr>
+                                <td><%= message.id %></td>
+                                <td><%= message.fullname %></td>
+                                <td><%= message.email %></td>
+                                <td>
+                                    <a class="btn btn-primary" href="/admin/inbox_detail/<%= message.id %>">READ</a>
+                                </td>
+                                <td>
+                                    <a href="/admin/inbox_delete/<%= message.id %>"><img class="formimage" src="/static/admin/images/delete.png"></a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>

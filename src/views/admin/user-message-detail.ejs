@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <%- include('../partials/admin-head.ejs') %>
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+        <%- include('../partials/admin-nav.ejs') %>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <%- include('../partials/admin-side-nav.ejs') %>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch grid-margin">
+                <div class="row flex-grow">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4 class="card-title"><%= title %></h4>
+                        <br/>
+                        <form class="forms-sample" action="/admin/inbox_delete/<%= inbox.id %>?_csrf=<%= csrfToken %>" method="GET">
+                          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            
+                          <div class="form-group">
+                            <label for="model">Full Name</label>
+                            <h6><%= inbox.fullname %></h6>
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Email</label>
+                            <h6><%= inbox.email %></h6>
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Message Date</label>
+                            <h6><%= inbox.message_date %></h6>
+                          </div>
+                          <div class="form-group">
+                            <label for="model">Message</label>
+                            <h6><%= inbox.message %></h6>
+                          </div>
+                          <button type="submit" class="btn btn-warning mr-2">Delete Message</button>
+                          <a href="/admin/inbox" class="btn btn-light">Cancel</a>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+          <%- include('../partials/admin-footer.ejs') %>
+  </body>
+</html>
