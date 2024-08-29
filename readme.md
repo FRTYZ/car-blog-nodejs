@@ -1,8 +1,8 @@
 # Manageable Car Blog Web Project with Admin Panel with NodeJS | MySQL, Express JS
 
-![](./public//user/image/ss/10-user-home.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/10-user-home.png)
 
-![](./public//user/image/ss/admin-home.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/admin-home.png)
 
 
 I designed a web project promoting my favorite car model, the Nissan GTR. You can manage the site from the Admin Panel
@@ -116,25 +116,25 @@ password = 123
 
 #### History Section
 
-![](./public//user/image/ss/admin-home.png)
-![](./public//user/image/ss/1.1-history-edit.png)
-![](./public//user/image/ss/1.2-history-add.png)
-![](./public//user/image/ss/1.3-history-delete.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/admin-home.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/1.1-history-edit.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/1.2-history-add.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/1.3-history-delete.png)
 
 #### History Section
-![](./public//user/image/ss/2-GTR-Models.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/2-GTR-Models.png)
 #### İnbox Section
-![](./public//user/image/ss/3-inbox.png)
-![](./public//user/image/ss/3.1-inbox-read.png)
-![](./public//user/image/ss/3.2-inbox-delete.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/3-inbox.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/3.1-inbox-read.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/3.2-inbox-delete.png)
 
 #### İnbox Section
-![](./public//user/image/ss/4-users.png)
-![](./public//user/image/ss/4.1-user-add.png)
-![](./public//user/image/ss/4.2-user-edit.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/4-users.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/4.1-user-add.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/4.2-user-edit.png)
 
 ### Profile Editing and Password Page by Login User
-![](./public//user/image/ss/5-myuser-password-edit.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/5-myuser-password-edit.png)
 
 #### Features in the Login Panel
 
@@ -151,14 +151,14 @@ password = 123
 - User can log out and log out from admin panel
 
 #### Login Page
-![](./public//user/image/ss/6-login.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/6-login.png)
 #### Register
-![](./public//user/image/ss/7-register.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/7-register.png)
 #### Reset Password
-![](./public//user/image/ss/8-Reset-Password.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/8-Reset-Password.png)
 #### New Password
-![](./public//user/image/ss/9.1-email-password.png)
-![](./public//user/image/ss/9-new-password.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/9.1-email-password.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/9-new-password.png)
 
 #### Features in the User Panel
 
@@ -167,14 +167,14 @@ password = 123
 - Users can send messages with Site Administrators in the Communication Section
 
 
-![](./public//user/image/ss/10-user-home.png)
-![](./public//user/image/ss/11-user-history.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/10-user-home.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/11-user-history.png)
 #### Detail History Section 
-![](./public//user/image/ss/11.1-history-details.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/11.1-history-details.png)
 #### R35 Models Section
-![](./public//user/image/ss/12-user-r35.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/12-user-r35.png)
 #### Detail R35 Models Section 
-![](./public//user/image/ss/13.1-r35-detail.png)
-![](./public//user/image/ss/13-user-contact-footer.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/13.1-r35-detail.png)
+![](https://raw.githubusercontent.com/FRTYZ/car-blog-nodejs/main/public/user/image/ss/13-user-contact-footer.png)
 
 Happy Coding
